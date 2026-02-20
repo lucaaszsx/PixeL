@@ -1,33 +1,35 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "pixel",
-    "description": "",
+    "description": "A next-level Discord bot designed to keep your server safe, active, and entertaining with moderation, games, and automation.",
     "version": "2.0.0",
     "private": true,
     "license": "MIT",
     "keywords": [
-        "students",
-        "school",
-        "frequency",
-        "system",
-        "presentation",
-        "api"
+        "discord",
+        "discord-api",
+        "discord.js",
+        "postgres",
+        "bot",
+        "automation",
+        "moderation",
+        "games"
     ],
     "contributors": [
         {
             "email": "jlucasmelob558@gmail.com",
-            "name": "Lucas Melo",
+            "name": "Lucas",
             "url": "https://github.com/lucaaszsx"
         }
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/lucaaszsx/frequency-control.git"
+        "url": "https://github.com/lucaaszsx/PixeL.git"
     },
     "bugs": {
-        "url": "https://github.com/lucaaszsx/frequency-control/issues"
+        "url": "https://github.com/lucaaszsx/PixeL/issues"
     },
-    "homepage": "https://github.com/lucaaszsx/frequency-control#README",
+    "homepage": "https://github.com/lucaaszsx/PixeL#README",
     "type": "commonjs",
     "main": "dist/main.js",
     "scripts": {

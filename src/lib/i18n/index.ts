@@ -1,3 +1,10 @@
+/**
+ * @file .ts
+ * @description
+ * @author Lucas
+ * @license MIT
+ */
+
 import { loadLocales } from './loader';
 import Metadata from './locales/metadata.json';
 
@@ -7,16 +14,17 @@ export interface I18nMetadata {
 }
 
 export interface I18nProviderInterface {
+    get<T = unknown>(key: string): T | undefined;
     t(key: string, variables: Record<string, string>): string;
 }
 
 export class I18nProvider implements I18nProviderInterface {
     private static metadata: I18nMetadata = Metadata;
     private static locales = loadLocales();
-    
+
     private locale: string;
 
-    constructor(locale: string) {
+    constructor(locale?: string) {
         this.locale = this.resolve(locale);
     }
 
@@ -24,7 +32,7 @@ export class I18nProvider implements I18nProviderInterface {
         return I18nProvider.locales.get(this.locale);
     }
 
-    private resolve(locale: string): string {
+    private resolve(locale?: string): string {
         if (!locale || !I18nProvider.locales.has(locale))
             return I18nProvider.metadata.defaultLocale;
 

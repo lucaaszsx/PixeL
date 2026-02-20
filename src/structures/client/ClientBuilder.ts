@@ -1,8 +1,9 @@
-import { BASE_CLIENT_OPTIONS } from "@/config/constants";
-import { Client, Collection } from "discord.js";
+import { BASE_CLIENT_OPTIONS } from '@/config/constants';
+import { Collection, Client } from 'discord.js';
+import { Command } from '@/types';
 
 export class PixeL extends Client {
-    private commands: ;
+    private commands: Collection<string, Command>;
     private aliases: Collection<string, string[]>;
 
     constructor() {

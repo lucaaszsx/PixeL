@@ -15,8 +15,7 @@ function deepMerge(target: AnyObject, source: AnyObject): AnyObject {
 
         if (isObject(sourceValue) && isObject(targetValue))
             target[key] = deepMerge({ ...targetValue }, sourceValue);
-        else
-            target[key] = sourceValue;
+        else target[key] = sourceValue;
     }
 
     return target;
@@ -25,7 +24,7 @@ function deepMerge(target: AnyObject, source: AnyObject): AnyObject {
 function loadDirectory(dir: string, accumulator: AnyObject = {}): AnyObject {
     for (const entry of readdirSync(dir)) {
         const fullPath = join(dir, entry);
-        
+
         if (statSync(fullPath).isDirectory()) {
             loadDirectory(fullPath, accumulator);
             continue;
@@ -34,7 +33,7 @@ function loadDirectory(dir: string, accumulator: AnyObject = {}): AnyObject {
 
         const content = readFileSync(fullPath, 'utf-8');
 
-        deepMerge(accumulator, yamlParser.parse(content)); 
+        deepMerge(accumulator, yamlParser.parse(content));
     }
 
     return accumulator;
