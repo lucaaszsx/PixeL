@@ -1,0 +1,38 @@
+# Dependencies
+node_modules
+
+# Log files
+logs
+*.log
+npm-debug.log*
+    
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Local env files
+.env
+.env.dev
+.env.test
+.env.prod
+
+# Build Outputs
+build
+dist
+
+# Miscellaneous
+.tmp
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.tsbuildinfo
+
+# Turbo
+.turbo
+
+# Cache
+.prettiercache
+.eslintcache
+.vercel

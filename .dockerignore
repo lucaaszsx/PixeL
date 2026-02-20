@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Environment
+.env
+.env.*
+!.env.template
+!.env.dev.template
+
+# Logs
+logs
+*.log
+
+# Development
+tests
+nodemon.json
+eslint.config.js
+.prettierrc.js
+.prettierignore
+.npmrc
+
+# Docker
+docker-compose.yml
+
+# Documentation
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE.txt
+README.md
+
+# Editor
+.vscode

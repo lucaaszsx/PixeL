@@ -1,0 +1,29 @@
+# yaml-language-server: $shema=https://compose-spec.io/schema/compose-spec.json
+
+services:
+    postgres:
+        image: postgres:16-alpine
+        restart: unless-stopped
+        env_file:
+            - .env.prod
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+            interval: 5s
+            timeout: 5s
+            retries: 5
+
+    bot:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: 'no'
+        env_file:
+            - .env.prod
+        depends_on:
+            postgres:
+                condition: service_healthy
+
+volumes:
+    postgres_data:

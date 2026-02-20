@@ -1,0 +1,69 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "pixel",
+    "description": "",
+    "version": "2.0.0",
+    "private": true,
+    "license": "MIT",
+    "keywords": [
+        "students",
+        "school",
+        "frequency",
+        "system",
+        "presentation",
+        "api"
+    ],
+    "contributors": [
+        {
+            "email": "jlucasmelob558@gmail.com",
+            "name": "Lucas Melo",
+            "url": "https://github.com/lucaaszsx"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lucaaszsx/frequency-control.git"
+    },
+    "bugs": {
+        "url": "https://github.com/lucaaszsx/frequency-control/issues"
+    },
+    "homepage": "https://github.com/lucaaszsx/frequency-control#README",
+    "type": "commonjs",
+    "main": "dist/main.js",
+    "scripts": {
+        "start": "node .",
+        "build": "tsc -p ./tsconfig.json && tsc-alias",
+        "clean": "rimraf ./dist",
+        "dev": "nodemon",
+        "lint": "eslint . --cache --ext .ts,.js --ignore-path .gitignore",
+        "lint:fix": "eslint . --cache --ext .ts,.js --ignore-path .gitignore --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "packageManager": "pnpm@10.28.2",
+    "devDependencies": {
+        "@eslint/js": "^9.39.2",
+        "@types/node": "^25.2.1",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-prettier": "^5.5.5",
+        "nodemon": "^3.1.11",
+        "rimraf": "^6.1.2",
+        "tsc-alias": "^1.8.16",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.54.0"
+    },
+    "dependencies": {
+        "discord.js": "^14.25.1",
+        "dotenv": "^17.2.4",
+        "pg": "^8.18.0",
+        "reflect-metadata": "^0.2.2",
+        "typeorm": "^0.3.28",
+        "yaml": "^2.8.2"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "$schema": "https://json.schemastore.org/nodemon.json",
+    "watch": ["src/*", ".env"],
+    "ext": "ts,json",
+    "ignore": ["node_modules"],
+    "exec": "tsx src/main.ts",
+    "delay": 2500
+}
