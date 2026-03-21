@@ -11,8 +11,8 @@ import type {
     PermissionResolvable,
     SlashCommandBuilder,
     Awaitable
-} from 'discord.js';
-import type { PixeL } from '@/structures/client/ClientBuilder';
+} from "discord.js";
+import type { PixeL } from "@/structures/client/ClientBuilder";
 import type { CommandContext } from './CommandContext';
 
 /**
@@ -61,7 +61,7 @@ export interface CommandMetadata {
 
     /** Command usage information */
     usage?: CommandUsageMetadata;
-
+    
     /** Short waiting time between the execution of this command and the next */
     cooldown?: string | number;
 

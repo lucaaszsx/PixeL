@@ -1,20 +1,26 @@
 /**
- * @file .ts
- * @description
+ * @file CommandContextBuilder.ts
+ * @description Command context builder for client commands.
  * @author Lucas
  * @license MIT
  */
 
 import {
     type TextBasedChannel,
+    type Snowflake,
     type Guild,
     type User,
-    type Snowflake,
     GuildMember,
     Message
 } from 'discord.js';
-import { CommandContextSource, CommandContextType, CommandContext, Command } from '@/types';
+import type {
+    CommandContextSource,
+    CommandContextType,
+    CommandContext,
+    Command
+} from '@/types';
 import { type I18nProviderInterface, I18nProvider } from '@/lib/i18n';
+import { CommandArgumentsBuilder } from './CommandArgumentsBuilder';
 import type { PixeL } from '../client/ClientBuilder';
 
 /**
@@ -25,6 +31,7 @@ export class CommandContextBuilder implements CommandContext {
     public readonly type: CommandContextType;
     public readonly source: CommandContextSource;
     public readonly command: Command;
+    public readonly args: CommandArgumentsBuilder;
     public readonly client: PixeL;
     public readonly i18n: I18nProviderInterface;
 
@@ -32,6 +39,7 @@ export class CommandContextBuilder implements CommandContext {
         this.type = type;
         this.source = source;
         this.command = command;
+        this.args = new CommandArgumentsBuilder(this);
         this.client = client;
 
         // TO-DO: add database user locale preference here

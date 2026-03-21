@@ -6,10 +6,6 @@
  */
 
 /** Commands */
-export type {
-    CommandContextSource,
-    CommandContextType,
-    CommandContext
-} from './commands/CommandContext';
-
-export type { CommandMetadata, CommandExecute, CommandData, Command } from './commands/Command';
+export * from './commands/CommandContext';
+export * from './commands/CommandArguments';
+export * from './commands/Command';
